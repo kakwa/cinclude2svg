@@ -25,26 +25,26 @@ Command line options are:
 
 --debug       Display various debug info
 --exclude     Specify a regular expression of filenames to ignore
-              For example, ignore your test harnesses.
+	      For example, ignore your test harnesses.
 --merge       Granularity of the diagram:
-                 file - the default, treats each file as separate
-                 module - merges .c/.cc/.cpp/.cxx and .h/.hpp/.hxx pairs
-                 directory - merges directories into one node
+		 file - the default, treats each file as separate
+		 module - merges .c/.cc/.cpp/.cxx and .h/.hpp/.hxx pairs
+		 directory - merges directories into one node
 --groups      Cluster files or modules into directory groups
 --help        Display this help page.
 --include     Followed by a comma separated list of include search
-                 paths.
+		 paths.
 --paths       Leaves relative paths in displayed filenames.
 --quotetypes  Select for parsing the files included by strip quotes or angle brackets:
-                 both - the default, parse all headers.
-                 angle - include only "system" headers included by anglebrackets (<>)
-                 quote - include only "user" headers included by strip quotes ("")
+		 both - the default, parse all headers.
+		 angle - include only "system" headers included by anglebrackets (<>)
+		 quote - include only "user" headers included by strip quotes ("")
 --src         Followed by a path to the source code, defaults to current directory
 
 END
-	exit 0;
+exit 0;
 }
- 
+
 ##########################################################################
 # Version history:
 #
@@ -93,10 +93,10 @@ my $includelist = "";
 my $quotetypes = "both";
 my $src = '.';
 die if !GetOptions('paths' => \$paths, 'groups' => \$groups,
-		   'exclude=s' => \$exclude, 'merge=s' => \$merge,
-		   'include=s' => \$includelist, 'help' =>\$help,
-		   'debug' => \$debug, 'quotetypes=s' => \$quotetypes,
-		   'src=s' => \$src);
+	'exclude=s' => \$exclude, 'merge=s' => \$merge,
+	'include=s' => \$includelist, 'help' =>\$help,
+	'debug' => \$debug, 'quotetypes=s' => \$quotetypes,
+	'src=s' => \$src);
 my @includepaths = split(/,/,$includelist);
 help() if ($help);
 if ($merge ne "file" && $merge ne "module" && $merge ne "directory")
@@ -122,6 +122,59 @@ sub tidypath {
 	return $_;
 }
 
+my @header_blacklist = qw(
+<argp.h>
+<assert.h>
+<errno.h>
+<fcntl.h>
+<features.h>
+<fstream>
+<iconv.h>
+<iostream>
+<limits.h>
+<math.h>
+<memstream.h>
+<png.h>
+<sstream>
+<stdbool.h>
+<stddef.h>
+<stdint.h>
+<stdio.h>
+<stdlib.h>
+<string.h>
+<sys/mman.h>
+<sys/stat.h>
+<sys/types.h>
+<time.h>
+<unistd.h>
+<wchar.h>
+<windef.h>
+<wingdi.h>
+<winnt.h>
+<istream>
+<map>
+<regex>
+<string>
+<unordered_map>
+<algorithm>
+<cmath>
+<cstring>
+<ctype.h>
+<functional>
+<inttypes.h>
+<iomanip>
+<limits>
+<list>
+<locale>
+<locale.h>
+<ostream>
+<set>
+<stack>
+<stdarg.h>
+<utility>
+<vector>
+);
+
 ##########################################################################
 # Searches file include path, and returns exact filename of file
 # Parameters: 
@@ -140,9 +193,9 @@ sub include_search {
 	my $item;
 	foreach $item (@includepaths)
 	{
-	  $_ = tidypath($item . "/" . $inc);
-	  warn "include_search trying $_" if $debug;
-	  return $_ if (-e "$_");
+		$_ = tidypath($item . "/" . $inc);
+		warn "include_search trying $_" if $debug;
+		return $_ if (-e "$_");
 	}
 
 	# Try relative to current directory
@@ -163,14 +216,14 @@ sub file_display {
 	$_ = basename($_) unless $paths;
 	if ($merge eq "module")
 	{
-        s/\.c$//; 
-        s/\.cc$//; 
-        s/\.cxx$//;
-        s/\.cpp$//;
-        s/\.C$//; 
+		s/\.c$//; 
+		s/\.cc$//; 
+		s/\.cxx$//;
+		s/\.cpp$//;
+		s/\.C$//; 
 		s/\.h$//; 
-        s/\.hpp$//;
-        s/\.hxx$//;
+		s/\.hpp$//;
+		s/\.hxx$//;
 	}
 	s:/:/\\n:g;
 	return $_;
@@ -201,74 +254,102 @@ my %notfound = ();
 my $file;
 foreach $file (@files)
 {
-  next if ($exclude ne "" and $file =~ m/$exclude/);
-	
-  chomp $file;
-  #strip "./" off off $file
-  $file =~ s#^./##g;
+	next if ($exclude ne "" and $file =~ m/$exclude/);
 
-  open (INPUT,"<$file");
-  my $line;
-  while ($line = <INPUT>)
-  {
+	chomp $file;
+	#strip "./" off off $file
+	$file =~ s#^./##g;
+
+	open (INPUT,"<$file");
+	my $from = dirname($file);
+	my $file_display = file_display($file);
+	my $line;
+	my $contain_main = 0;
+	while ($line = <INPUT>)
+	{
 #    if ($line =~ m#^\#\s*include\s(\S+)#)
-    my $regexp_include_line = '^\#\s*include\s+(\S+)';
-    if ($quotetypes eq "angle") 
-        { $regexp_include_line = '^\#\s*include\s+<(\S+)>'; }
-    elsif ($quotetypes eq "quote") 
-        { $regexp_include_line = '^\#\s*include\s+"(\S+)"'; }
-    if ($line =~ m/$regexp_include_line/)
-    {
-      my $included = $1;
 
-      # strip quotes & anglebrackets
-	  (my $rawincluded = $included) =~ s/[\<\>"]//g;
-	  my $includefile = include_search($rawincluded, $file);
+		my $regexp_include_line = '^\#\s*include\s+(\S+)';
+		if ($quotetypes eq "angle") 
+		{ $regexp_include_line = '^\#\s*include\s+<(\S+)>'; }
+		elsif ($quotetypes eq "quote") 
+		{ $regexp_include_line = '^\#\s*include\s+"(\S+)"'; }
+		if ($line =~ m/$regexp_include_line/)
+		{
+			my $included = $1;
 
-	  if (! defined $includefile)
-	  {
-		  $notfound{$included . " from " . $file} = 1;
-		  next;
-	  }
+			# strip quotes & anglebrackets
+			(my $rawincluded = $included) =~ s/[\<\>"]//g;
+			my $includefile = include_search($rawincluded, $file);
 
-	  if ($merge eq "directory")
-	  {
-		  my $from = dirname($file);
-		  my $to = dirname($includefile);
-		  $links{"	\"$from\" -> \"$to\"\n"} = 1 unless $from eq $to;
-	  }
-	  else
-	  {
-		  my $includefile_display = file_display($includefile);
-		  my $file_display = file_display($file);
+			if (! defined $includefile)
+			{
+				if (not ( grep( /^$included$/, @header_blacklist ) )) {
+					$links{"	\"$file_display\" -> \"$rawincluded\"\n"} = 1;
+				} else {
+					next;
+				}
+				$notfound{$included . " from " . $file} = 1;
+				next;
+			}
 
-		  if ($groups)
-		  {
-			  my $groupname = dirname($includefile);
-			  print <<END;
+			if ($merge eq "directory")
+			{
+				my $to = dirname($includefile);
+				$links{"	\"$from\" -> \"$to\"\n"} = 1 unless $from eq $to;
+			}
+			else
+			{
+				my $includefile_display = file_display($includefile);
+
+				if ($groups)
+				{
+					my $groupname = dirname($includefile);
+					print <<END;
 subgraph "cluster$groupname" {
 	label="$groupname";
 	"$includefile_display";
 }
 END
-			  $groupname = dirname($file);
-			  print <<END;
+					$groupname = dirname($file);
+					print <<END;
 subgraph "cluster$groupname" {
 	label="$groupname";
 	"$file_display";
 }
 END
-		  }
+				}
 
-          if ($file_display ne $includefile_display)
-		  {
-		      $links{"	\"$file_display\" -> \"$includefile_display\"\n"} = 1;
-		  }
-       }	
-    }
-  }
+				if ($file_display ne $includefile_display)
+				{
+					$links{"	\"$file_display\" -> \"$includefile_display\"\n"} = 1;
+				}
+			}	
+		}
+		if ($line =~ m/int\ *main\ *\(.*\)/) 
+		{
+			$contain_main = 1;
+		}
+	}
+	if ($file =~ m/.*\.(c|cc|cxx|cpp|C)$/) {
+		if ($contain_main) {
+			print <<END
+"$file_display" [fillcolor="#F6C9BB", shape="box", style="filled"];
+END
 
-  close INPUT;
+		} else {
+			print <<END
+"$file_display" [fillcolor="#BFFF9E", shape="box", style="filled"];
+END
+		}
+	}
+	if ($file =~ m/.*\.(h|hpp|hxx)$/) {
+		print <<END
+"$file_display" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+END
+	}
+
+	close INPUT;
 }
 
 # Print out the links (we used a hash to avoid repeats of the same link)
