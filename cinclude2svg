@@ -28,16 +28,40 @@ done
 [ -z "$OUT" ] && help
 [ -z "$NAME" ] && NAME=`basename $IN`
 
+if ! [ -f "$CINCLUDE2DOT_PATH" ]
+then
+    echo "FATAL: $CINCLUDE2DOT_PATH doesn't exit"
+    exit 1
+fi
+
+if ! [ -f "$CINCLUDE2DOT_PATH" ]
+then
+    echo "FATAL: $CINCLUDE2DOT_PATH doesn't exit"
+    exit 1
+fi
+
+if ! which twopi 2>&1 >/dev/null
+then
+    echo "FATAL: graphviz (dot) needs to be installed"
+    exit 1
+fi
+
 mkdir -p $OUT
+
+# generate the dot file
 perl $CINCLUDE2DOT_PATH --groups --src $IN >$OUT/source.dot
+
+# calculate the needed size from the number of lines (which is approximatly the number of links)
 lines=`wc -l $OUT/source.dot | sed 's/\ .*//'`
 size=`echo $lines | awk '{print sqrt($1) * 800 / sqrt(100000)}'`
-echo $size
-#twopi -Gnodesep=300 -Goverlap=true  -Gsize="$size,$size" -Tsvg $OUT/source.dot -o $OUT/graph.svg
-#neato -Gnodesep=300 -Goverlap=true  -Gsize="$size,$size" -Tsvg $OUT/source.dot -o $OUT/graph.svg
+
+# generate the SVG image
 twopi -Gnodesep=300 -Goverlap=scale  -Gsize="$size,$size" -Tsvg $OUT/source.dot -o $OUT/graph.svg
+
+# copy javascript for svg navigation
 cp -r $PAN_ZOOM_PATH $OUT/
 
+# generate a simple index page
 cat >$OUT/index.html <<EOF
 <!DOCTYPE html>
 <html>
@@ -89,5 +113,3 @@ cat >$OUT/index.html <<EOF
 
 </html>
 EOF
-
-
