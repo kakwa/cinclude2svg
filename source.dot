@@ -1,0 +1,374 @@
+digraph "source tree" {
+    overlap=scale;
+    size="8,10";
+    ratio="fill";
+    fontsize="16";
+    fontname="Helvetica";
+	clusterrank="local";
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"upmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"pmf2svg.h";
+}
+"pmf2svg.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"emf2svg_img_utils.h";
+}
+"emf2svg_img_utils.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"upmf.h";
+}
+"upmf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf_utf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf.h";
+}
+"uemf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"emf2svg_private.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"memstream.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"emf2svg_private.h";
+}
+"emf2svg_private.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"emf2svg_print.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"memstream.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"emf2svg_print.h";
+}
+"emf2svg_print.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+"emf2svg.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+"uemf_endian.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"uemf_utf.h";
+}
+"uemf_utf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+"memstream.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"upmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/inc" {
+	label="../Geek/GitHub/libemf2svg/inc";
+	"pmf2svg_print.h";
+}
+"pmf2svg_print.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+"example.c" [fillcolor="#F6C9BB", shape="box", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/memstream-0.1" {
+	label="../Geek/GitHub/libemf2svg/deps/memstream-0.1";
+	"memstream.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/memstream-0.1" {
+	label="../Geek/GitHub/libemf2svg/deps/memstream-0.1";
+	"test.c";
+}
+"test.c" [fillcolor="#F6C9BB", shape="box", style="filled"];
+"memstream.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/memstream-0.1" {
+	label="../Geek/GitHub/libemf2svg/deps/memstream-0.1";
+	"memstream.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/memstream-0.1" {
+	label="../Geek/GitHub/libemf2svg/deps/memstream-0.1";
+	"memstream.c";
+}
+"memstream.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.c";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.c";
+}
+"uwmf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf_endian.c";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf_endian.c";
+}
+"uwmf_endian.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"upmf.h";
+}
+"upmf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_utf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.h";
+}
+"uemf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.c";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.c";
+}
+"uemf_endian.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.c";
+}
+"uemf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"uemf_endian.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_utf.h";
+}
+"uemf_utf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf_endian.h";
+}
+"uwmf_endian.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"upmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"upmf.c";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"upmf.c";
+}
+"upmf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_utf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf_endian.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uwmf.h";
+}
+"uwmf.h" [fillcolor="#A5FFFA", shape="ellipse", style="filled"];
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_utf.h";
+}
+subgraph "cluster../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17" {
+	label="../Geek/GitHub/libemf2svg/deps/libUEMF-0.1.17";
+	"uemf_utf.c";
+}
+"uemf_utf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_path.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_print.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_clip_utils.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_control.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_comment.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"uemf_endian.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"uemf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_drawing.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_object_creation.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_transform.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_img_utils.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"pmf2svg_print.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_object_manipulation.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_utils.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_clipping.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"pmf2svg.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"upmf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_state_record.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"memstream.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg_rec_bitmap.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"uemf_utf.c" [fillcolor="#BFFF9E", shape="box", style="filled"];
+"emf2svg.cpp" [fillcolor="#F6C9BB", shape="box", style="filled"];
+	"emf2svg_rec_drawing.c" -> "emf2svg_print.h"
+	"uemf_endian.c" -> "uemf_endian.h"
+	"pmf2svg_print.c" -> "pmf2svg.h"
+	"emf2svg_rec_state_record.c" -> "emf2svg_private.h"
+	"emf2svg_rec_drawing.c" -> "emf2svg_private.h"
+	"emf2svg_rec_state_record.c" -> "emf2svg_print.h"
+	"uemf.h" -> "uemf_endian.h"
+	"emf2svg_rec_object_manipulation.c" -> "emf2svg_private.h"
+	"emf2svg_rec_object_manipulation.c" -> "emf2svg_print.h"
+	"uwmf.h" -> "uemf.h"
+	"pmf2svg_print.h" -> "upmf.h"
+	"emf2svg_print.h" -> "uemf.h"
+	"pmf2svg.c" -> "emf2svg_private.h"
+	"emf2svg_rec_bitmap.c" -> "emf2svg_print.h"
+	"pmf2svg.c" -> "pmf2svg.h"
+	"uwmf.h" -> "uemf_utf.h"
+	"emf2svg_rec_object_creation.c" -> "emf2svg_print.h"
+	"upmf.c" -> "upmf.h"
+	"emf2svg_rec_comment.c" -> "emf2svg_private.h"
+	"emf2svg_rec_control.c" -> "emf2svg_private.h"
+	"emf2svg.c" -> "emf2svg_print.h"
+	"pmf2svg_print.c" -> "pmf2svg_print.h"
+	"uwmf_endian.c" -> "uwmf.h"
+	"emf2svg.cpp" -> "emf2svg.h"
+	"uwmf.c" -> "uwmf_endian.h"
+	"emf2svg_private.h" -> "memstream.h"
+	"emf2svg.c" -> "emf2svg_private.h"
+	"uemf.c" -> "uemf.h"
+	"emf2svg_rec_comment.c" -> "pmf2svg_print.h"
+	"uwmf_endian.h" -> "uemf_endian.h"
+	"emf2svg_rec_comment.c" -> "pmf2svg.h"
+	"emf2svg_rec_bitmap.c" -> "emf2svg_img_utils.h"
+	"emf2svg_rec_path.c" -> "emf2svg_private.h"
+	"emf2svg_print.c" -> "emf2svg_print.h"
+	"emf2svg_rec_transform.c" -> "emf2svg_print.h"
+	"upmf.c" -> "uemf_endian.h"
+	"emf2svg_clip_utils.c" -> "emf2svg_private.h"
+	"upmf.h" -> "uemf.h"
+	"pmf2svg_print.c" -> "emf2svg_private.h"
+	"pmf2svg_print.c" -> "emf2svg_print.h"
+	"uemf.h" -> "uemf_utf.h"
+	"emf2svg_rec_clipping.c" -> "emf2svg_private.h"
+	"emf2svg_private.h" -> "uemf.h"
+	"test.c" -> "memstream.h"
+	"uemf_utf.h" -> "uemf_endian.h"
+	"emf2svg_rec_path.c" -> "emf2svg_print.h"
+	"emf2svg_rec_control.c" -> "emf2svg_print.h"
+	"emf2svg_rec_transform.c" -> "emf2svg_private.h"
+	"emf2svg_rec_bitmap.c" -> "emf2svg_private.h"
+	"emf2svg.c" -> "emf2svg.h"
+	"emf2svg_utils.c" -> "emf2svg_private.h"
+	"emf2svg_rec_object_creation.c" -> "emf2svg_private.h"
+	"memstream.c" -> "memstream.h"
+	"uemf_utf.c" -> "uemf_utf.h"
+	"emf2svg_clip_utils.c" -> "emf2svg_img_utils.h"
+	"emf2svg_print.h" -> "memstream.h"
+	"uwmf_endian.c" -> "uwmf_endian.h"
+	"emf2svg_print.c" -> "emf2svg_private.h"
+	"pmf2svg.h" -> "upmf.h"
+	"emf2svg_rec_comment.c" -> "emf2svg_print.h"
+	"example.c" -> "emf2svg.h"
+	"emf2svg_utils.c" -> "emf2svg_print.h"
+	"uwmf.c" -> "uwmf.h"
+	"emf2svg_img_utils.c" -> "emf2svg_img_utils.h"
+	"uwmf.h" -> "uwmf_endian.h"
+	"emf2svg_img_utils.h" -> "uemf.h"
+	"uemf_endian.c" -> "uemf.h"
+	"emf2svg_rec_clipping.c" -> "emf2svg_print.h"
+}

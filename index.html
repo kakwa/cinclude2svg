@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./svg-pan-zoom.js"></script>
+    <title>Dep Graph for libemf2svg:</title>
+  </head>
+
+  <body>
+    <h2>Dep Graph for libemf2svg:</h2>
+    <div class="controls" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+      <button id="zoom-in">Zoom in</button>
+      <button id="zoom-out">Zoom out</button>
+      <button id="reset">Reset</button>
+    </div>
+    <object id="demo-graph" type="image/svg+xml" data="graph.svg" style="height:auto; width:auto; max-width: 90%; height: 800px; display: block; margin-left: auto; margin-right: auto; border:1px solid black; ">Your browser does not support SVG</object>
+    <script>
+      // Don't use window.onLoad like this in production, because it can only listen to one function.
+      window.onload = function() {
+        var panZoom = svgPanZoom('#demo-graph', {
+          zoomEnabled: true,
+          maxZoom: 1000,
+          zoomScaleSensitivity: 0.4,
+          dblClickZoomEnabled: false,
+          controlIconsEnabled: false
+        });
+
+        document.getElementById('zoom-in').addEventListener('click', function(ev){
+          ev.preventDefault()
+
+          panZoom.zoomIn()
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', function(ev){
+          ev.preventDefault()
+
+          panZoom.zoomOut()
+        });
+
+        document.getElementById('reset').addEventListener('click', function(ev){
+          ev.preventDefault()
+
+          panZoom.reset()
+        });
+      };
+    </script>
+
+  </body>
+
+</html>
