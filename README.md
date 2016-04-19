@@ -9,7 +9,7 @@ It also contains an helper script, cinclude2svg, lanching cinclude2dot, generati
 
 ## Original author:
 
-https://www.flourish.org/cinclude2dot/cinclude2dot
+https://www.flourish.org/cinclude2dot/
 
 ## Example:
 
