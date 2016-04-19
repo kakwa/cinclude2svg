@@ -21,3 +21,10 @@ $ firefox out/index.html
 Output:
 
 http://kakwa.github.io/cinclude2svg/
+
+The color code is the following:
+
+* ellipse + blue: internal headers
+* ellipse + white: external headers
+* box + green: .c/.cxx files
+* box + red: .c/.cxx files containing a main function
